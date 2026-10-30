@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ylus Properties | Demo Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <a class="admin-brand" href="index.html">Ylus <span>Properties</span></a>
+        <p class="sidebar-label">DEMO WORKSPACE</p>
+        <a class="active" href="#overview">Overview</a>
+        <a href="#projects">Land & Projects</a>
+        <a href="#enquiries">Enquiries</a>
+        <a href="#instalments">Instalment Demo</a>
+        <a href="index.html">← Public Website</a>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div>
+                <p class="eyebrow">YLUS PROPERTIES</p>
+                <h1>Development Dashboard</h1>
+            </div>
+            <span class="demo-label">DEMO MODE</span>
+        </header>
+
+        <p class="warning">
+            Sample data only. No secure login, database, payment processing,
+            or persistent customer records are configured.
+        </p>
+
+        <section id="overview">
+            <h2>Overview</h2>
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <p>Sample Projects</p>
+                    <h3 id="projectCount">3</h3>
+                </article>
+                <article class="stat-card">
+                    <p>Demo Enquiries</p>
+                    <h3 id="enquiryCount">0</h3>
+                </article>
+                <article class="stat-card">
+                    <p>Demo Outstanding</p>
+                    <h3 id="outstandingTotal">₦0</h3>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="admin-section">
+            <h2>Land & Development Projects</h2>
+            <form id="projectForm" class="admin-form">
+                <label for="projectName">Project name</label>
+                <input id="projectName" required placeholder="e.g. Industrial Estate Concept">
+
+                <label for="projectLocation">Location</label>
+                <input id="projectLocation" required placeholder="State, Nigeria">
+
+                <label for="projectType">Project type</label>
+                <select id="projectType">
+                    <option value="Commercial">Commercial</option>
+                    <option value="Industrial">Industrial</option>
+                    <option value="Logistics">Logistics</option>
+                    <option value="Residential">Residential</option>
+                </select>
+
+                <button type="submit">Add Demo Project</button>
+            </form>
+            <div id="projectList" class="table-wrap"></div>
+        </section>
+
+        <section id="enquiries" class="admin-section">
+            <h2>Enquiries</h2>
+            <p class="muted">Enquiries entered here exist only in this page session.</p>
+            <form id="enquiryForm" class="admin-form">
+                <label for="customerName">Contact name</label>
+                <input id="customerName" required placeholder="Demo contact">
+
+                <label for="customerInterest">Interest</label>
+                <input id="customerInterest" required placeholder="Land acquisition">
+
+                <button type="submit">Add Demo Enquiry</button>
+            </form>
+            <div id="enquiryList" class="table-wrap"></div>
+        </section>
+
+        <section id="instalments" class="admin-section">
+            <h2>Instalment Calculator Demo</h2>
+            <p class="muted">For calculations only; not a payment ledger.</p>
+            <form id="instalmentForm" class="admin-form">
+                <label for="planName">Plan label</label>
+                <input id="planName" required placeholder="Example plan">
+
+                <label for="totalPrice">Total agreed price (₦)</label>
+                <input id="totalPrice" type="number" min="0" step="0.01" required>
+
+                <label for="deposit">Deposit paid (₦)</label>
+                <input id="deposit" type="number" min="0" step="0.01" value="0" required>
+
+                <label for="monthlyPayment">Monthly payment (₦)</label>
+                <input id="monthlyPayment" type="number" min="0" step="0.01" value="0" required>
+
+                <button type="submit">Calculate Plan</button>
+            </form>
+            <div id="instalmentResult" class="result-panel" aria-live="polite"></div>
+        </section>
+
+        <footer class="admin-footer">
+            <a href="index.html">Return to Ylus Properties website</a>
+        </footer>
+    </main>
+
+</body>
+
+</html>
